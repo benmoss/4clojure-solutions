@@ -1,4 +1,4 @@
-(ns fourclojure.64
+(ns fourclojure.65
   (:use midje.sweet))
 
 (defn solution [x]
