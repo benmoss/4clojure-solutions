@@ -1,14 +1,14 @@
 (ns fourclojure.60
   (:use midje.sweet))
 
-(fn x
+(defn solution
   ([f coll]
-   (x f (first coll) (rest coll)))
+   (solution f (first coll) (rest coll)))
   ([f val coll]
    (cons val
          (lazy-seq
            (when-let [s (seq coll)]
-             (x f (f val (first s)) (rest s)))))))
+             (solution f (f val (first s)) (rest s)))))))
 
 (fact
   (take 5 (solution + (range))) => [0 1 3 6 10]
